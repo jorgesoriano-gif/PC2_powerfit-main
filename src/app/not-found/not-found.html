@@ -1,0 +1,77 @@
+<!-- src/app/not-found/not-found.html -->
+
+<div class="error-page-container container">
+  
+  <!-- El 404 Gigante -->
+  <h1 class="error-code">404</h1>
+  <div class="error-alert">
+    <i class="bi bi-exclamation-triangle-fill"></i> CARGA DESCONOCIDA
+  </div>
+
+  <!-- Mensajes de Error -->
+  <div class="error-title-sub">[ RUTA FUERA DE LÍMITES ]</div>
+  <h2 class="error-title">PÁGINA NO ENCONTRADA //<br>FALLO DE EJECUCIÓN</h2>
+  <p class="error-desc">
+    Parece que esta página se fue a hacer una serie de repeticiones pesadas y no volvió al rack. El enlace que buscas no existe, expiró o ha sido reubicado en nuestro almacén principal.
+  </p>
+
+  <!-- Botones principales (Usando estilos globales) -->
+  <div class="action-buttons">
+    <a routerLink="/home" class="btn-primary-power">
+      <i class="bi bi-house-door"></i> VOLVER AL INICIO
+    </a>
+    <a href="javascript:history.back()" class="btn-outline-power">
+      <i class="bi bi-arrow-left"></i> REGRESAR
+    </a>
+  </div>
+
+  <!-- Tarjetas de Navegación Rápida -->
+  <div class="quick-links">
+    
+    <!-- Tarjeta 1: Tienda -->
+    <a routerLink="/tienda" class="quick-card">
+      <div class="quick-card-header">
+        <i class="bi bi-bag quick-icon"></i>
+        <span class="quick-badge">CATÁLOGO 01</span>
+      </div>
+      <div class="quick-card-title">
+        IR A LA TIENDA <i class="bi bi-arrow-right"></i>
+      </div>
+      <p class="quick-card-desc">Barras olímpicas, jaulas de potencia, discos y mancuernas de calibración profesional.</p>
+    </a>
+
+    <!-- Tarjeta 2: Ofertas -->
+    <a routerLink="/ofertas" class="quick-card">
+      <div class="quick-card-header">
+        <i class="bi bi-fire text-danger" style="font-size: 1.2rem;"></i>
+        <span class="quick-badge" style="color: #f97316;">● HASTA -40%</span>
+      </div>
+      <div class="quick-card-title">
+        VER OFERTAS <i class="bi bi-arrow-right"></i>
+      </div>
+      <p class="quick-card-desc">Liquidación por lote de suplementación técnica, racks de pared e indumentaria de alta fricción.</p>
+    </a>
+
+    <!-- Tarjeta 3: Soporte -->
+    <a routerLink="/contacto" class="quick-card">
+      <div class="quick-card-header">
+        <i class="bi bi-headset quick-icon"></i>
+        <span class="quick-badge">ESCUADRA TÉCNICA</span>
+      </div>
+      <div class="quick-card-title">
+        CONTACTAR A SOPORTE <i class="bi bi-arrow-right"></i>
+      </div>
+      <p class="quick-card-desc">¿Encontraste una rotura en el sistema? Notifícalo a nuestro equipo de operaciones.</p>
+    </a>
+  </div>
+
+  <!-- Buscador Inferior -->
+  <div class="search-bottom">
+    <span class="input-group-text bg-transparent border-end-0 border-secondary text-muted" style="border-radius: 4px 0 0 4px; padding-left: 15px;">
+      <i class="bi bi-search"></i>
+    </span>
+    <input type="text" class="search-bottom-input" placeholder="¿Buscabas algo específico? Escribe el producto o código..." style="border-left: none; border-radius: 0;">
+    <button class="search-bottom-btn">BUSCAR</button>
+  </div>
+
+</div>

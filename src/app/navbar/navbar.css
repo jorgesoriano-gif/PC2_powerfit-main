@@ -1,0 +1,136 @@
+/* src/app/navbar/navbar.css */
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.pf-navbar {
+  background-color: var(--pf-bg);
+  border-bottom: 1px solid var(--pf-border);
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  color: var(--pf-text);
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand:hover {
+  color: var(--pf-text);
+}
+
+.brand-icon {
+  color: var(--pf-primary); /* El logo usa el color de acento */
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: var(--pf-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--pf-text);
+}
+
+/* El link activo de la página actual, en tu imagen parece resaltar en el color de acento */
+.nav-link.active {
+  color: var(--pf-primary);
+}
+
+/* Barra de Búsqueda */
+.search-container {
+  position: relative;
+  width: 250px;
+}
+
+.search-input {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+  padding: 8px 15px 8px 35px; /* Espacio a la izquierda para el ícono */
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.85rem;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--pf-primary);
+  background-color: var(--pf-surface);
+}
+
+.search-input::placeholder {
+  color: var(--pf-muted);
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pf-muted);
+  font-size: 0.9rem;
+}
+
+/* Ícono del Carrito */
+.cart-btn {
+  color: var(--pf-text);
+  font-size: 1.2rem;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0 15px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  background-color: #ff9800; /* Color naranja que se ve en la imagen */
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* Botón de Mi Cuenta */
+.account-btn {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+  padding: 5px 15px 5px 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.account-btn img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.account-btn:hover {
+  background-color: var(--pf-surface-light);
+  color: var(--pf-text);
+}

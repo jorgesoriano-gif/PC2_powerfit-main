@@ -1,0 +1,78 @@
+<div class="login-page d-flex align-items-center justify-content-center">
+  <div class="login-card p-4 p-md-5">
+    <div class="text-center mb-4">
+      <div class="login-icon">
+        <i class="bi bi-person-circle"></i>
+      </div>
+
+      <h1 class="logo-login">POWERFIT</h1>
+      <p class="login-subtitle mb-0">INICIAR SESIÓN</p>
+      <p class="login-description">Accede a tu cuenta y continúa con tu experiencia PowerFit.</p>
+    </div>
+
+    <!-- MENSAJE DE ERROR -->
+    <div *ngIf="mensajeError" class="alert alert-danger text-center rounded-3">
+      <i class="bi bi-exclamation-circle me-2"></i>
+      {{ mensajeError }}
+    </div>
+
+    <form (ngSubmit)="iniciarSesion()">
+      <!-- CORREO -->
+      <div class="mb-3">
+        <label class="form-label">Correo electrónico</label>
+
+        <div class="input-group-power">
+          <i class="bi bi-envelope input-icon"></i>
+
+          <input
+            type="email"
+            class="form-control custom-form-control"
+            [(ngModel)]="usuario"
+            name="usuario"
+            placeholder="correo@powerfit.pe"
+            autocomplete="email"
+          />
+        </div>
+      </div>
+
+      <!-- CONTRASEÑA -->
+      <div class="mb-4">
+        <label class="form-label">Contraseña</label>
+
+        <div class="input-group-power">
+          <i class="bi bi-lock input-icon"></i>
+
+          <input
+            [type]="mostrarClave ? 'text' : 'password'"
+            class="form-control custom-form-control password-input"
+            [(ngModel)]="clave"
+            name="clave"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+
+          <button
+            type="button"
+            class="btn-eye"
+            (click)="toggleClave()"
+            [attr.aria-label]="mostrarClave ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+          >
+            <i class="bi" [ngClass]="mostrarClave ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOTÓN LOGIN -->
+      <button type="submit" class="btn btn-login w-100" [disabled]="cargando">
+        <span *ngIf="cargando" class="spinner-border spinner-border-sm me-2" role="status"></span>
+
+        {{ cargando ? 'INGRESANDO...' : 'INICIAR SESIÓN' }}
+      </button>
+    </form>
+
+    <div class="login-footer text-center mt-4">
+      <i class="bi bi-shield-check me-1"></i>
+      Acceso seguro PowerFit
+    </div>
+  </div>
+</div>

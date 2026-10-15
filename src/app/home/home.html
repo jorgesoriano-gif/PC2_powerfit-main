@@ -1,0 +1,131 @@
+<!-- src/app/home/home.html -->
+
+<!-- HERO SECTION (Diseño centralizado tipo modelo) -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h1 class="hero-title">SUPERA TUS <span>LÍMITES</span></h1>
+        <p class="hero-subtitle">
+          Equipamiento & Suplementación de Élite. Entra en el estado de flujo. Transforma tu
+          potencial en poder medible. Únete a la élite.
+        </p>
+
+        <div class="hero-buttons">
+          <!-- Usando las clases globales que ya tienes en styles.css -->
+          <a routerLink="/tienda" class="btn-primary-power text-decoration-none">
+            EXPLORAR CATÁLOGO <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a routerLink="/ofertas" class="btn-outline-power text-decoration-none">
+            VER OFERTAS EXCLUSIVAS
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DE MARCAS ALIADAS -->
+<section class="brands-bar d-none d-md-block">
+  <div class="container">
+    <div class="brands-header">
+      <div class="brands-label">EQUIPAMIENTO HOMOLOGADO & ALIANZAS GLOBALES</div>
+      <div class="brands-status">VERIFICADAS BAJO ESTÁNDAR IPF / IFBB</div>
+    </div>
+    <div class="brands-logos">
+      <span>IRONFORGE</span>
+      <span>TITANX</span>
+      <span>KINETIQ</span>
+      <span>VULCAN</span>
+      <span>SYNTHEX</span>
+      <span>APEXLABS</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN DE CATEGORÍAS -->
+<section class="categories-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Tarjeta 1: Suplementos -->
+      <div class="col-md-6 col-lg-3">
+        <a routerLink="/tienda" class="card cat-card">
+          <div class="cat-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=900&q=80"
+              alt="Suplementos"
+            />
+          </div>
+
+          <div class="card-body cat-info">
+            <h3 class="cat-name">SUPLEMENTOS & PROTEÍNAS</h3>
+
+            <p class="cat-details">
+              Creatina Creapure®, Whey Isolate 90%. Fórmulas Pre-Workout de alta sinergia muscular.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Tarjeta 2: Equipamiento -->
+      <div class="col-md-6 col-lg-3">
+        <a routerLink="/tienda" class="card cat-card">
+          <div class="cat-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80"
+              alt="Equipamiento"
+            />
+          </div>
+
+          <div class="card-body cat-info">
+            <h3 class="cat-name">EQUIPAMIENTO DE FUERZA</h3>
+
+            <p class="cat-details">
+              Barras olímpicas 20kg, Mancuernas hexagonales de uretano y racks de acero calibre 11.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Tarjeta 3: Ropa -->
+      <div class="col-md-6 col-lg-3">
+        <a routerLink="/tienda" class="card cat-card">
+          <div class="cat-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1716951980904-fbe5c5aa2279?q=80&w=1028&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Ropa Deportiva"
+            />
+          </div>
+
+          <div class="card-body cat-info">
+            <h3 class="cat-name">ROPA DEPORTIVA PRO</h3>
+
+            <p class="cat-details">
+              Compresión anatómica de grado médico, camisetas ultra transpirables Dry-Fit.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Tarjeta 4: Accesorios -->
+      <div class="col-md-6 col-lg-3">
+        <a routerLink="/tienda" class="card cat-card">
+          <div class="cat-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1530021356476-0a6375ffe73b?auto=format&fit=crop&w=900&q=80"
+              alt="Accesorios deportivos"
+            />
+          </div>
+
+          <div class="card-body cat-info">
+            <h3 class="cat-name">ACCESORIOS & RECUPERACIÓN</h3>
+
+            <p class="cat-details">
+              Cinturones de palanca 10mm, Shakers de acero isotérmicos y pistolas de masaje.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

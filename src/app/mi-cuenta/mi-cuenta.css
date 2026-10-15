@@ -1,0 +1,263 @@
+/* src/app/mi-cuenta/mi-cuenta.css */
+.mi-cuenta-container {
+  padding: 40px 0 80px;
+}
+
+/* Tarjeta de Perfil (Izquierda) */
+.profile-card {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-header {
+  background-color: #0a0a0a;
+  padding: 40px 20px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--pf-surface);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.profile-level {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--pf-primary);
+  color: #141414;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--pf-text);
+  margin-bottom: 5px;
+}
+
+.profile-id {
+  color: var(--pf-muted);
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.profile-body {
+  padding: 30px 20px;
+  text-align: left;
+}
+
+.info-group {
+  margin-bottom: 20px;
+}
+
+.info-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--pf-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.info-data {
+  font-size: 0.95rem;
+  color: var(--pf-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-data i {
+  color: var(--pf-primary);
+}
+
+/* Panel de Historial (Derecha) */
+.history-panel {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  padding: 30px;
+  height: 100%;
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-title i {
+  color: var(--pf-primary);
+}
+
+/* Tarjetas de Órdenes */
+.order-card {
+  border: 1px solid var(--pf-border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: var(--pf-bg);
+  transition: border-color 0.2s;
+}
+
+.order-card:hover {
+  border-color: var(--pf-muted);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed var(--pf-border);
+}
+
+.order-id {
+  font-weight: 800;
+  color: var(--pf-text);
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.order-date {
+  color: var(--pf-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.order-desc {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.order-details {
+  color: var(--pf-muted);
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-total {
+  font-weight: 900;
+  color: var(--pf-primary);
+  font-size: 1.1rem;
+}
+
+.order-status {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   AJUSTES MI CUENTA
+======================================== */
+
+.page-subtitle {
+  max-width: 620px;
+  margin: 12px auto 0;
+
+  color: var(--pf-muted);
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.account-points {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--pf-primary);
+
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.edit-title {
+  margin-bottom: 20px;
+
+  color: var(--pf-text);
+
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.form-label {
+  color: var(--pf-muted);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.account-input {
+  background-color: var(--pf-surface-light) !important;
+
+  border: 1px solid var(--pf-border) !important;
+
+  color: var(--pf-text) !important;
+
+  border-radius: 7px;
+}
+
+.account-input:focus {
+  border-color: var(--pf-primary) !important;
+
+  box-shadow: 0 0 0 0.2rem rgba(174, 187, 245, 0.1) !important;
+}
+
+.account-success {
+  background-color: rgba(112, 201, 157, 0.08);
+
+  border: 1px solid rgba(112, 201, 157, 0.25);
+
+  color: #8bd5ae;
+}
+
+.empty-icon {
+  color: var(--pf-primary);
+
+  font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+  .order-header,
+  .order-footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 8px;
+  }
+}

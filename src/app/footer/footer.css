@@ -1,0 +1,96 @@
+/* src/app/footer/footer.css */
+
+.pf-footer {
+  background-color: var(--pf-bg);
+  border-top: 1px solid var(--pf-border);
+  padding: 60px 0 20px 0;
+  margin-top: 50px; /* Separación del contenido principal */
+}
+
+.footer-brand {
+  color: var(--pf-primary); /* Hereda el color azul pastel del tema */
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  color: var(--pf-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-heading {
+  color: var(--pf-text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  color: var(--pf-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--pf-primary);
+}
+
+/* Íconos de Redes Sociales */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+  border-radius: 4px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  background-color: var(--pf-primary);
+  color: var(--pf-text-inverse); /* Letra oscura al hacer hover para contraste */
+  border-color: var(--pf-primary);
+}
+
+/* Barra inferior de Copyright */
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--pf-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.copyright {
+  color: var(--pf-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.tagline {
+  color: var(--pf-primary); /* Hereda el color azul pastel del tema */
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

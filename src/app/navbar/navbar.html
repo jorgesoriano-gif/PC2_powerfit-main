@@ -1,0 +1,132 @@
+<nav
+  class="navbar navbar-expand-lg"
+  style="background-color: #0a0a0a; border-bottom: 1px solid var(--pf-border); padding: 15px 0"
+>
+  <div class="container">
+    <!-- Logo -->
+    <a
+      class="navbar-brand"
+      routerLink="/"
+      style="color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px"
+    >
+      POWERFIT
+    </a>
+
+    <!-- Botón Hamburguesa para Móviles -->
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      (click)="toggleMenu()"
+      style="border-color: rgba(255, 255, 255, 0.1)"
+    >
+      <i class="bi bi-list" style="color: white; font-size: 1.5rem"></i>
+    </button>
+
+    <!-- Enlaces (Colapsables en móvil) -->
+    <div class="collapse navbar-collapse" [class.show]="menuAbierto">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center text-lg-start mt-3 mt-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="cerrarMenu()"
+            >INICIO</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tienda" routerLinkActive="active" (click)="cerrarMenu()"
+            >TIENDA</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ofertas" routerLinkActive="active" (click)="cerrarMenu()"
+            >OFERTAS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contacto"
+            routerLinkActive="active"
+            (click)="cerrarMenu()"
+            >CONTACTO</a
+          >
+        </li>
+        <li *ngIf="sesionActiva" class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            (click)="cerrarMenu()"
+          >
+            DASHBOARD
+          </a>
+        </li>
+      </ul>
+
+      <!-- Iconos y Mi Cuenta -->
+      <div class="d-flex align-items-center justify-content-center gap-4 mt-3 mt-lg-0">
+
+        <a
+          class="nav-icon-link position-relative"
+          routerLink="/carrito"
+          routerLinkActive="active"
+          (click)="cerrarMenu()"
+        >
+          <i class="bi bi-cart3"></i>
+
+          <span
+            *ngIf="cantidadCarrito > 0"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+            style="font-size: 0.6rem"
+          >
+            {{ cantidadCarrito }}
+          </span>
+        </a>
+
+        <a
+          *ngIf="sesionActiva"
+          routerLink="/mi-cuenta"
+          class="btn-outline-power d-flex align-items-center gap-2"
+          style="padding: 5px 15px; font-size: 0.8rem"
+          (click)="cerrarMenu()"
+        >
+          <span
+            class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 24px; height: 24px; font-size: 0.7rem"
+          >
+            US
+          </span>
+
+          MI CUENTA
+        </a>
+
+        <button
+          *ngIf="sesionActiva"
+          type="button"
+          class="btn-outline-power d-flex align-items-center gap-1"
+          style="padding: 5px 12px; font-size: 0.8rem; border-color: rgba(239, 68, 68, 0.4); color: #f87171"
+          (click)="cerrarSesion()"
+          title="Cerrar sesión"
+        >
+          <i class="bi bi-box-arrow-right"></i>
+          <span class="d-none d-sm-inline">SALIR</span>
+        </button>
+
+        <a
+          *ngIf="!sesionActiva"
+          routerLink="/login"
+          class="btn-outline-power d-flex align-items-center gap-2"
+          style="padding: 5px 15px; font-size: 0.8rem"
+          (click)="cerrarMenu()"
+        >
+          <i class="bi bi-person"></i>
+
+          INICIAR SESIÓN
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

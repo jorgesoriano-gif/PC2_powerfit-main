@@ -1,0 +1,207 @@
+/* src/app/not-found/not-found.css */
+
+.error-page-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* El número 404 gigante */
+.error-code {
+  font-size: clamp(8rem, 15vw, 15rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--pf-primary); /* Azul pastel */
+  /* Resplandor azul usando valores RGBA aproximados al pastel */
+  text-shadow: 0 0 40px rgba(174, 187, 245, 0.25);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.error-alert {
+  color: var(--pf-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.error-alert i {
+  color: #f97316;
+  margin-right: 5px;
+}
+
+/* Textos principales */
+.error-title-sub {
+  color: var(--pf-primary); /* Azul pastel */
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.error-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.error-desc {
+  color: var(--pf-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Botones de acción principal */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.action-buttons a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px; /* Botones un poco más grandes para esta vista */
+}
+
+/* Tarjetas de Navegación Rápida */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.quick-card {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: 4px;
+  padding: 25px;
+  text-align: left;
+  flex: 1;
+  min-width: 250px;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pf-primary); /* Borde azul en hover */
+}
+
+.quick-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.quick-icon {
+  color: var(--pf-primary); /* Iconos azules */
+  font-size: 1.2rem;
+}
+
+.quick-badge {
+  color: var(--pf-muted);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.quick-card-title {
+  color: var(--pf-text);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-card-title i {
+  font-size: 1rem;
+  color: var(--pf-muted);
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.quick-card:hover .quick-card-title i {
+  transform: translateX(5px);
+  color: var(--pf-primary); /* Flecha azul en hover */
+}
+
+.quick-card-desc {
+  color: var(--pf-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Buscador Inferior */
+.search-bottom {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-bottom-input {
+  flex-grow: 1;
+  background-color: var(--pf-bg);
+  border: 1px solid var(--pf-border);
+  border-right: none;
+  padding: 12px 15px;
+  color: var(--pf-text);
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bottom-input:focus {
+  outline: none;
+  border-color: var(--pf-primary); /* Borde azul al enfocar */
+}
+
+.search-bottom-btn {
+  background-color: var(--pf-surface-light);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.2s;
+}
+
+.search-bottom-btn:hover {
+  background-color: var(--pf-primary);
+  color: var(--pf-text-inverse);
+  border-color: var(--pf-primary);
+}

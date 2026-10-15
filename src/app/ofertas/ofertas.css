@@ -1,0 +1,330 @@
+/* src/app/ofertas/ofertas.css */
+
+.ofertas-container {
+  padding: 40px 0 80px;
+}
+
+/* Encabezado */
+.ofertas-header {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.page-badge {
+  color: #f97316; /* Naranja para resaltar las ofertas */
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(249, 115, 22, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.page-subtitle {
+  color: var(--pf-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Contador (Timer) */
+.countdown-box {
+  display: flex;
+  gap: 15px;
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+
+.time-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-val {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--pf-text);
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.65rem;
+  color: var(--pf-muted);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.time-separator {
+  color: var(--pf-muted);
+  font-size: 1.2rem;
+  font-weight: 700;
+  align-self: center;
+  margin-top: -15px;
+}
+
+/* Filtros */
+.filters-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid var(--pf-border);
+  color: var(--pf-muted);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: var(--pf-primary);
+  color: var(--pf-text-inverse);
+  border-color: var(--pf-primary);
+}
+
+.filter-btn.danger {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.filter-btn.danger:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Tarjetas de Producto en Oferta */
+.product-card {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-img-wrapper {
+  position: relative;
+  height: 200px;
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Etiquetas sobre la imagen */
+.discount-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--pf-primary); /* Azul pastel */
+  color: var(--pf-text-inverse); /* Oscuro */
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.stock-tag {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: var(--pf-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.stock-tag.low {
+  color: #ef4444; /* Rojo para poco stock */
+}
+
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--pf-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--pf-text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.product-desc {
+  font-size: 0.8rem;
+  color: var(--pf-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.price-container {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+.price-original {
+  font-size: 0.85rem;
+  color: var(--pf-muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.price-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-sale {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--pf-primary); /* Precio final en azul pastel */
+}
+
+.savings-tag {
+  background-color: rgba(174, 187, 245, 0.1);
+  color: var(--pf-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Botón Añadir */
+.btn-add-cart {
+  width: 100%;
+}
+
+/* Barra inferior de Garantías */
+.features-bar {
+  background-color: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 15px;
+}
+
+.feature-icon {
+  color: var(--pf-primary);
+  font-size: 1.5rem;
+}
+
+.feature-title {
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.feature-desc {
+  color: var(--pf-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+/* src/app/ofertas/ofertas.css */
+
+/* ... MANTÉN TODO EL CÓDIGO CSS ANTERIOR INTACTO Y AÑADE ESTO AL FINAL ... */
+
+/* Estilos para el mensaje de éxito del carrito */
+.alert-custom-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid #10b981;
+  color: #10b981;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.alert-custom-success i.bi-check-circle-fill {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.btn-close-custom {
+  background: none;
+  border: none;
+  color: #10b981;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.btn-close-custom:hover {
+  opacity: 0.7;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,119 @@
+<!-- src/app/contacto/contacto.html -->
+
+<div class="contacto-container">
+  <div class="container">
+    
+    <!-- Encabezado Central -->
+    <div class="text-center">
+      <div class="page-badge">CANAL DIRECTO DE RENDIMIENTO</div>
+      <h1 class="page-title">CONTÁCTANOS // SOPORTE ATLETA</h1>
+      <p class="page-subtitle">¿Tienes dudas sobre tallas, envíos o asesoría en suplementación? Nuestro equipo de expertos te responde en menos de 24 horas.</p>
+    </div>
+
+    <!-- Contenedor Principal (Centrado) -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <!-- ALERTAS: Mensaje de éxito y error -->
+        <div *ngIf="mensajeExito" class="alert-custom-success mb-4" style="background-color: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; color: #10b981; padding: 15px; border-radius: 8px; font-weight: 700;">
+          <i class="bi bi-check-circle-fill me-2"></i> {{ mensajeExito }}
+        </div>
+
+        <div *ngIf="mensajeError" class="alert-custom-error mb-4" style="background-color: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; padding: 15px; border-radius: 8px; font-weight: 700;">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ mensajeError }}
+        </div>
+        
+        <!-- Formulario de Contacto (¡Ahora con Angular Forms!) -->
+        <div class="contact-form-container">
+          <!-- Al enviar el formulario, ejecuta enviarFormulario() -->
+          <form (ngSubmit)="enviarFormulario()">
+            <div class="row mb-4">
+              <div class="col-md-6 mb-4 mb-md-0">
+                <label class="form-label-custom">NOMBRE COMPLETO <span>*</span></label>
+                <!-- ngModel conecta esto con datosFormulario.nombre -->
+                <input type="text" class="form-control-custom" placeholder="Ej. Marcos Silva" 
+                       [(ngModel)]="datosFormulario.nombre" name="nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">CORREO ELECTRÓNICO <span>*</span></label>
+                <!-- ngModel conecta esto con datosFormulario.correo -->
+                <input type="email" class="form-control-custom" placeholder="nombre@ejemplo.com"
+                       [(ngModel)]="datosFormulario.correo" name="correo" required>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label-custom">ASUNTO / TIPO DE CONSULTA <span>*</span></label>
+              <!-- ngModel conecta esto con datosFormulario.asunto -->
+              <select class="form-select-custom" [(ngModel)]="datosFormulario.asunto" name="asunto">
+                <option value="" disabled selected>Selecciona una categoría...</option>
+                <option value="Dudas sobre productos">Dudas sobre productos</option>
+                <option value="Problemas con un pedido">Problemas con un pedido</option>
+                <option value="Asesoría técnica">Asesoría técnica</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex justify-content-between">
+                <label class="form-label-custom">MENSAJE <span>*</span></label>
+                <span class="text-muted" style="font-size: 0.7rem; font-weight: 700;">MÁX. 500 CAR.</span>
+              </div>
+              <!-- ngModel conecta esto con datosFormulario.mensaje -->
+              <textarea class="form-control-custom" rows="5" placeholder="Escribe tu mensaje aquí..."
+                        [(ngModel)]="datosFormulario.mensaje" name="mensaje" required maxlength="500"></textarea>
+            </div>
+
+            <!-- Botón de envío (Se deshabilita mientras se envía la petición) -->
+            <button type="submit" class="btn-primary-power btn-submit-contacto w-100" [disabled]="enviando">
+              <span *ngIf="!enviando">ENVIAR MENSAJE <i class="bi bi-arrow-right ms-2"></i></span>
+              <span *ngIf="enviando">
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                TRANSMITIENDO...
+              </span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div> <!-- Fin Row Formulario -->
+
+    <!-- Grilla de Tarjetas de Información (Igual que antes) -->
+    <div class="row g-4 mt-2">
+      <!-- Tarjeta 1: Email -->
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="bi bi-envelope info-icon"></i>
+            <span class="info-label">01 // CANAL</span>
+          </div>
+          <div>
+            <div class="info-title">EMAIL DIRECTO</div>
+            <div class="info-value">soporte@powerfit.<br>com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Teléfono -->
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="bi bi-telephone info-icon"></i>
+            <span class="info-label">02 // DIRECTO</span>
+          </div>
+          <div>
+            <div class="info-title">TELÉFONO / WHATSAPP</div>
+            <div class="info-value">+51 987 654 321</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3: Horario -->
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="bi bi-clock info-icon"></i>
+            <span class="info-label">03 // OPERATIVO</span>
+          </div>
+          <div>
+            <div class="info-title">HORARIO TÉCNICO</div>
+            <div class="info-value">Lun - Sáb, 08:00 -<br>2

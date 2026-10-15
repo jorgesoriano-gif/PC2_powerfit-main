@@ -1,0 +1,155 @@
+<section class="carrito-page">
+  <div class="container py-5">
+    <!-- HEADER -->
+
+    <div class="carrito-header mb-5">
+      <span class="section-label"> POWERFIT MARKET </span>
+
+      <h1>Mi carrito</h1>
+
+      <p>Revisa y administra los productos que agregaste.</p>
+    </div>
+
+    <!-- CARRITO VACÍO -->
+
+    <div *ngIf="items.length === 0" class="empty-cart">
+      <div class="empty-icon">🛒</div>
+
+      <h2>Tu carrito está vacío</h2>
+
+      <p>Todavía no has agregado ningún producto.</p>
+
+      <a routerLink="/productos" class="btn btn-primary-power"> Ver productos </a>
+    </div>
+
+    <!-- CARRITO CON PRODUCTOS -->
+
+    <div *ngIf="items.length > 0" class="row g-4">
+      <!-- PRODUCTOS -->
+
+      <div class="col-lg-8">
+        <div class="cart-items">
+          <article *ngFor="let item of items" class="cart-item">
+            <!-- IMAGEN -->
+
+            <div class="cart-image">
+              <img [src]="item.producto.imagen" [alt]="item.producto.nombre" />
+
+              <span *ngIf="item.producto.oferta" class="offer-badge">
+                -{{ item.producto.descuento }}%
+              </span>
+            </div>
+
+            <!-- INFORMACIÓN -->
+
+            <div class="cart-info">
+              <span class="category-label">
+                {{ item.producto.categoria | uppercase }}
+              </span>
+
+              <h3>
+                {{ item.producto.nombre }}
+              </h3>
+
+              <!-- PRECIO -->
+
+              <div class="price-section">
+                <span *ngIf="item.producto.oferta" class="old-price">
+                  {{ item.producto.precio | currency: 'PEN' : 'S/ ' : '1.2-2' }}
+                </span>
+
+                <span class="current-price">
+                  {{ obtenerPrecio(item) | currency: 'PEN' : 'S/ ' : '1.2-2' }}
+                </span>
+              </div>
+
+              <!-- CANTIDAD -->
+
+              <div class="quantity-section">
+                <span class="quantity-label"> Cantidad </span>
+
+                <div class="quantity-control">
+                  <button
+                    class="quantity-button"
+                    [disabled]="item.cantidad <= 1"
+                    (click)="disminuirCantidad(item.producto.id)"
+                  >
+                    −
+                  </button>
+
+                  <span class="quantity-value">
+                    {{ item.cantidad }}
+                  </span>
+
+                  <button
+                    class="quantity-button"
+                    [disabled]="item.cantidad >= item.producto.stock"
+                    (click)="aumentarCantidad(item.producto.id)"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- SUBTOTAL -->
+
+              <div class="item-bottom">
+                <div>
+                  <span class="subtotal-label"> Subtotal </span>
+
+                  <strong class="subtotal">
+                    {{ obtenerSubtotal(item) | currency: 'PEN' : 'S/ ' : '1.2-2' }}
+                  </strong>
+                </div>
+
+                <button class="remove-button" (click)="eliminarProducto(item.producto.id)">
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- RESUMEN -->
+
+      <div class="col-lg-4">
+        <aside class="cart-summary">
+          <span class="summary-label"> RESUMEN </span>
+
+          <h2>Resumen del carrito</h2>
+
+          <div class="summary-row">
+            <span> Productos </span>
+
+            <span>
+              {{ cantidadTotal }}
+            </span>
+          </div>
+
+          <div class="summary-row">
+            <span> Envío </span>
+
+            <span class="free-shipping"> Gratis </span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-total">
+            <span> Total </span>
+
+            <strong>
+              {{ total | currency: 'PEN' : 'S/ ' : '1.2-2' }}
+            </strong>
+          </div>
+
+          <a routerLink="/productos" class="btn btn-primary-power w-100 mt-4"> Seguir comprando </a>
+
+          <button class="btn btn-outline-power w-100 mt-3" (click)="vaciarCarrito()">
+            Vaciar carrito
+          </button>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
